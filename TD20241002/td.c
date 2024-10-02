@@ -15,15 +15,14 @@ int main(int argc, const char *argv[])
 	printf("Entrez la valeur de la resistance [Ω]: ");
     scanf("%lf", &R);
 
-	if(R>0)
-	{
-		I = U / R; // loin d'hom
-		printf("Courant est de %.3E [A] \r\n",I); // affciher la valeur du courant
-	}else
+	if(R<=0)
 	{
 		printf("ERREUR \r\n"); // erreur de valeur de resistance
 		return 1;
 	}
+	
+	I = U / R; // loin d'hom
+	printf("Courant est de %.3E [A] \r\n",I); // affciher la valeur du courant
 
 	return 0;
 }
